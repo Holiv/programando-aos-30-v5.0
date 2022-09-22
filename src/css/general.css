@@ -137,16 +137,15 @@ main{
     height: 335px;
     /* border: 1px solid red; */
 }
-.section:first-child{
+.section:nth-child(odd){
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 25px;
-    flex-shrink: 0;
     width: 60%;
     /* border: 1px solid red; */
 }
-.section:nth-child(2){
+.section:nth-child(even){
     width: 40%;
     display: flex;
     justify-content: center;
@@ -173,4 +172,48 @@ main{
     line-height: 1.4rem;
     letter-spacing: 0.12rem;
     filter: drop-shadow(5px 5px 5px black);
+}
+
+#info_branches{
+    display: flex;
+    flex-direction: column;
+    transform: rotate(270deg);
+
+}
+
+.branch_colors{
+    /* border: 1px solid red; */
+    display: block;
+    height: 10px;
+    padding: 0 125px;
+    margin-bottom: 5px;
+
+}
+
+.branch_names{
+    /* border: 1px solid blue; */
+    display: block;
+    width: 250px;
+    height: 10px;
+    font-size: 0.6rem;
+    margin-bottom: 5px;
+}
+
+.bc_01{
+    background-color: var(--pallete-01);
+}
+.bc_02{
+    background-color: var(--pallete-02);
+}
+.bc_03{
+    background-color: var(--pallete-03);
+}
+.bc_04{
+    background-color: var(--pallete-04);
+}
+.bc_05{
+    background-color: var(--pallete-05);
+}
+.bc_06{
+    background-color: var(--pallete-06);
 }
