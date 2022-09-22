@@ -124,7 +124,8 @@ html{
 }
 
 main{
-    width: calc(100% - (2 * var(--grid_width)));
+    width: 100%;
+    /* width: calc(100% - (2 * var(--grid_width))); */
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -136,12 +137,23 @@ main{
     /* border: 1px solid red; */
 }
 .section:first-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 25px;
     flex-shrink: 0;
     width: 60%;
+    /* border: 1px solid red; */
 }
 .section:nth-child(2){
     width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+.section:nth-child(2) img{
+    height: 250px;
 }
 
 .section h1{
