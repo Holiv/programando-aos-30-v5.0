@@ -17,11 +17,14 @@
     --hover-color: #eceff4;
 
     --pallete-01: #f72585;
+    --pallete-01-0: #f7258480;
     --pallete-02: #b5179e;
     --pallete-03: #560bad;
+    --pallete-03-0: #570bad80;
     --pallete-04: #3f37c9;
     --pallete-05: #4895ef;
     --pallete-06: #4cc9f0;
+    --pallete-06-0: #4cc9f080;
 
     --grid_width: 90.833px;
     --grid_gap: 10px;
@@ -40,8 +43,6 @@ html{
     max-width: 1440px;
     min-width: 998px;
     height: 100vh;
-
-    /* border: 1px solid var(--pallete-01); */
 }
 
 #inner_container{
@@ -51,12 +52,6 @@ html{
     position: relative;
     display: flex;
     flex-direction: column;
-
-    
-
-    /* border: 1px solid blue; */
-
-    /* border: 1px solid var(--pallete-04); */
 }
 
 #navbar{
@@ -64,7 +59,6 @@ html{
     height: 80px;
     display: flex;
     margin-bottom: 100px;
-    /* border: 1px solid var(--pallete-05); */
 }
 
 #logo_section{
@@ -84,7 +78,6 @@ html{
 #itens_section{
     width: 50%;
     height: 100%;
-    /* border: 1px solid red; */
 }
 
 #itens_section ul{
@@ -102,8 +95,8 @@ html{
     font-size: 0.6rem;
     line-height: 24px;
     text-align: center;
-    filter: drop-shadow(5px 5px 5px black);
-
+    filter: drop-shadow(5px 5px 5px #00000085);
+    animation: shadow 1s ease;
     /* border: 1px solid red; */
 }
 
@@ -112,8 +105,6 @@ html{
     position: absolute;
     top: 750px;
     left: 66px;
-
-    /* border: 1px solid red; */
 }
 
 #branch img{
@@ -122,6 +113,7 @@ html{
     width: auto;
     height: auto;
     filter: drop-shadow(8px 0px 10px #00000085);
+    animation: shadow 1s ease;
 }
 
 main{
@@ -156,14 +148,22 @@ main{
     max-height: 250px;
     height: auto;
     border-radius: 50%;
-    box-shadow: 5px 8px 10px black;
+    box-shadow: 6px 6px 20px var(--pallete-01-0),
+                /* 4px 4px 4px var(--pallete-02), */
+                8px 8px 20px var(--pallete-03-0),
+                /* 8px 8px 8px var(--pallete-04), */
+                /* 10px 10px 20px var(--pallete-05), */
+                10px 10px 20px var(--pallete-06-0),
+                -2px -2px 5px black;
+    animation: avatar 2s ease;
 }
 
 .section h1{
     font-size: 1.1rem;
     margin-bottom: 30px;
     letter-spacing: 0.5rem;
-    filter: drop-shadow(5px 5px 5px black);
+    filter: drop-shadow(5px 5px 5px #00000085);
+    animation: shadow 1s ease;
 }
 
 .section h3{
@@ -171,7 +171,8 @@ main{
     text-align: justify;
     line-height: 1.4rem;
     letter-spacing: 0.12rem;
-    filter: drop-shadow(5px 5px 5px black);
+    filter: drop-shadow(5px 5px 5px #00000085);
+    animation: shadow 1s ease;
 }
 
 #info_branches{
@@ -216,4 +217,18 @@ main{
 }
 .bc_06{
     background-color: var(--pallete-06);
+}
+
+/* keyframes */
+
+@keyframes avatar{
+    0%{
+        box-shadow: 0px 0px 0px black;
+    }
+}
+
+@keyframes shadow{
+    0%{
+        filter: drop-shadow(0px 0px 0px black);
+    }
 }
