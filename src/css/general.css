@@ -330,8 +330,15 @@ main {
     font-size: 0.7rem;
     font-family: inherit;
     background: var(--pallete-03-0);
+    box-shadow: 2px 2px 2px var(--pallete-06);
     z-index: 3;
+    cursor: pointer;
 } 
+
+.click_button{
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px transparent;
+}
 
 .fadeaway{
     animation: fadeaway 1s ease;

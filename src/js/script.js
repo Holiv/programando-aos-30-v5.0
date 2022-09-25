@@ -53,7 +53,6 @@ window.onload = shrink();
 const popup = document.querySelector('#popup_introduction');
 const popup_bg = document.querySelector('#popup_bg');
 let popup_bg_height = `${totalHeight}px`
-console.log(popup_bg_height);
 const close_button = document.querySelector('#close_b');
 
 
@@ -65,7 +64,10 @@ window.addEventListener("load", function(){
 
 close_button.addEventListener('click', function(){
     popup.style.animation = "fadeaway 1s ease";
-    popup_bg.style.animation = "bg_fadeaway 1s ease"
+    popup_bg.style.animation = "bg_fadeaway 1s ease";
+    close_button.classList.add("click_button");
+    // close_button.style.transform = "translate(2px, 2px)";
+    // close_button.style.box-shadow = "0px 0px 0px transparent";
     setTimeout(() => {
         popup.style.display = "none";
         popup_bg.style.display = "none";
