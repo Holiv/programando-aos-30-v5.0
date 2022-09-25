@@ -1,5 +1,5 @@
+const totalHeight = document.querySelector("html").offsetHeight;
 const articles = document.querySelectorAll('.articles');
-console.log(articles[0]);
 
 const shrink = () => {
 
@@ -49,3 +49,25 @@ const shrink = () => {
 
 window.onload = shrink();
 
+// popup configuration
+const popup = document.querySelector('#popup_introduction');
+const popup_bg = document.querySelector('#popup_bg');
+let popup_bg_height = `${totalHeight}px`
+console.log(popup_bg_height);
+const close_button = document.querySelector('#close_b');
+
+
+window.addEventListener("load", function(){
+    popup.style.display = "flex";
+    popup_bg.style.display = "block";
+    popup_bg.style.height = `${totalHeight}px`;
+});
+
+close_button.addEventListener('click', function(){
+    popup.style.animation = "fadeaway 1s ease";
+    popup_bg.style.animation = "bg_fadeaway 1s ease"
+    setTimeout(() => {
+        popup.style.display = "none";
+        popup_bg.style.display = "none";
+    }, 1000);
+});
