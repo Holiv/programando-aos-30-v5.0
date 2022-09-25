@@ -330,7 +330,7 @@ main {
     font-size: 0.7rem;
     font-family: inherit;
     background: var(--pallete-03-0);
-    box-shadow: 2px 2px 2px var(--pallete-06);
+    box-shadow: 2px 2px 2px var(--pallete-03);
     z-index: 3;
     cursor: pointer;
 } 
