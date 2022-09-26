@@ -57,7 +57,7 @@ html {
     position: absolute;
     width: 100%;
     background-color: var(--pallete-03);
-    opacity: 0.6;
+    opacity: 0.2;
     z-index: 1;
     animation: show_popup_bg 1.5s ease;
     display: none;
@@ -423,7 +423,7 @@ main {
     }
 
     100% {
-        opacity: 0.6;
+        opacity: 0.2;
     }
 }
 
@@ -437,7 +437,7 @@ main {
 }
 @keyframes bg_fadeaway {
     0%{
-        opacity: 0.6;
+        opacity: 0.2;
     }
     100%{
         opacity: 0;
