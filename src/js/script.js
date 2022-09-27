@@ -1,5 +1,8 @@
 const totalHeight = document.querySelector("html").offsetHeight;
 const articles = document.querySelectorAll('.articles');
+const popupBg = document.querySelector('#popup_bg');
+const branchImg = document.querySelector('#branch');
+
 
 const shrink = () => {
 
@@ -47,7 +50,13 @@ const shrink = () => {
 
 }
 
-window.onload = shrink();
+const preConfig = () => {
+    shrink();
+    popupBg.style.height = "200vh";
+    popupBg.style.border = "none";
+}
+window.onload = preConfig();
+
 
 // popup configuration
 const popup = document.querySelector('#popup_introduction');
@@ -59,7 +68,7 @@ const close_button = document.querySelector('#close_b');
 window.addEventListener("load", function(){
     popup.style.display = "flex";
     popup_bg.style.display = "block";
-    popup_bg.style.height = `${totalHeight}px`;
+    popup_bg.style.height = '100vh';
 });
 
 close_button.addEventListener('click', function(){
@@ -71,5 +80,6 @@ close_button.addEventListener('click', function(){
     setTimeout(() => {
         popup.style.display = "none";
         popup_bg.style.display = "none";
+        branchImg.style.display = "block"
     }, 1000);
 });
