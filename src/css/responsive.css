@@ -4,7 +4,6 @@
         max-width: 480px;
         min-width: 300px;
         height: 100vh;
-        /* border: 1px solid red; */
     }
     #inner_container{
         width: calc(100% - 10px);
@@ -12,6 +11,12 @@
     }
     #navbar{
         margin-bottom: 20px;
+    }
+    #itens_section ul{
+        display: none;
+    }
+    #toggle_menu{
+        display: flex;
     }
     #branch{
         width: calc(100% - 10px);

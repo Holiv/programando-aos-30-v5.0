@@ -56,8 +56,7 @@ html {
     display: block;
     position: absolute;
     width: 100%;
-    /* height: 100vh; */
-    border: 5px solid red;
+    height: 100vh;
     background-color: var(--pallete-03);
     opacity: 0.2;
     z-index: 1;
@@ -117,24 +116,20 @@ html {
 #itens_section ul {
     width: 100%;
     height: 80%;
-    display: none;
+    display: flex;
     justify-content: flex-end;
     align-items: center;
     gap: 10px;
 }
 
 #toggle_menu{
-    justify-self: flex-end;
+    position: relative;
     height: 80%;
     width: 40px;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-evenly;
-    /* border: 1px solid red; */
-}
-button #toggle_menu{
-    background-color: transparent;
-    border: 5px solid red;
+    cursor: pointer;
 }
 
 #toggle_menu span{
@@ -494,4 +489,64 @@ main {
     0%{
         filter: drop-shadow(0px 0px 3px black);
     }
+}
+
+@keyframes toggle_01 {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-45deg);
+    }
+}
+
+.toggle_01{
+    position: absolute;
+    animation: toggle_01 1s ease;
+    transform: rotate(-45deg);
+}
+
+@keyframes toggle_01_0 {
+    0%{
+        transform: rotate(-45deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.toggle_01_0{
+    position: absolute;
+    animation: toggle_01_0 1s ease;
+    transform: rotate(0deg);
+}
+
+@keyframes toggle_02 {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(45deg);
+    }
+}
+
+.toggle_02{
+    position: absolute;
+    animation: toggle_02 1s ease;
+    transform: rotate(45deg);
+}
+
+@keyframes toggle_02_0{
+    0%{
+        transform: rotate(45deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.toggle_02_0{
+    position: absolute;
+    animation: toggle_02_0 1s ease;
+    transform: rotate(0deg);
 }
