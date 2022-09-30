@@ -139,10 +139,10 @@ const menuMove = (card1, card2, changeSet, hideCard1_p, hideCard2_p, showCard1_p
     substitution(card1, card2, changeSet, hideCard1_p, hideCard2_p, showCard1_p, showCard2_p);
 }
 
-toggleMenu.addEventListener("click", function () { addShowAll(card_0, card_1, card_2, card_3, showCard0, showCard1, showCard2, showCard3) });
-card_1.addEventListener("click", function () { menuMove(card_0, card_1, 1, hideCard0, hideCard1, showCard0, showCard1) });
-card_2.addEventListener("click", function () { menuMove(card_0, card_2, 2, hideCard0, hideCard2, showCard0, showCard2) });
-card_3.addEventListener("click", function () { menuMove(card_0, card_3, 3, hideCard0, hideCard3, showCard0, showCard3) });
+// toggleMenu.addEventListener("click", function () { addShowAll(card_0, card_1, card_2, card_3, showCard0, showCard1, showCard2, showCard3) });
+// card_1.addEventListener("click", function () { menuMove(card_0, card_1, 1, hideCard0, hideCard1, showCard0, showCard1) });
+// card_2.addEventListener("click", function () { menuMove(card_0, card_2, 2, hideCard0, hideCard2, showCard0, showCard2) });
+// card_3.addEventListener("click", function () { menuMove(card_0, card_3, 3, hideCard0, hideCard3, showCard0, showCard3) });
 
 toggleMenu.addEventListener("touchstart", function () { addShowAll(card_0, card_1, card_2, card_3, showCard0, showCard1, showCard2, showCard3) });
 card_1.addEventListener("touchstart", function () { menuMove(card_0, card_1, 1, hideCard0, hideCard1, showCard0, showCard1) });
