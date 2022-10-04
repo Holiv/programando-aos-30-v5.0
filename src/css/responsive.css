@@ -9,23 +9,32 @@
         width: calc(100% - 10px);
         height: auto;
     }
-    #logo {
+    #logo a{
         height: 100%;
     }
     #logo a img:first-child{
         display: none;
     }
     #logo a img:nth-child(2){
-        display: block;
+        display: flex;
+        width: auto;
+        height: 100%;
+        margin: 0;
+
     }
     #navbar{
-        margin-bottom: 20px;
+        margin-bottom: 50px;
+
+    }
+    #itens_section{
+        height: 100%;
     }
     #itens_section ul{
         display: none;
     }
     #toggle_menu{
         display: flex;
+        height: 50px;
     }
     #branch{
         width: calc(100% - 10px);

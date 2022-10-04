@@ -82,7 +82,6 @@ html {
 }
 
 #logo {
-    height: 80%;
     width: 50%;
     display: flex;
     align-items: center;
@@ -90,6 +89,7 @@ html {
 }
 
 #logo a {
+    display: block;
     height: 80%;
     width: 100%;
 }
@@ -358,6 +358,8 @@ main {
     animation: show_popup 1.5s ease;
     border-radius: 15px 15px;
     display: none;
+    font-size: .85em;
+    text-transform: uppercase;
     flex-direction: column;
     justify-content: space-between;
     z-index: 2;
@@ -367,7 +369,6 @@ main {
     height: 40px;
     line-height: 2em;
     text-align: center;
-    font-size: 1em;
 }
 
 #popup_introduction span {
@@ -460,10 +461,9 @@ main {
         8px 8px 15px var(--pallete-04-0),
         10px 10px 15px var(--pallete-06-0),
         -2px -2px 5px black;
-    /* animation: avatar 2s infinite linear; */
 }
 .contact_elements{
-    margin-top: 20px;
+    margin: 20px 0;
 }
 .contact_elements a{
     display: flex;
@@ -483,6 +483,27 @@ main {
 .contact_elements img{
     height: 40px;
     width: auto;
+}
+
+#swipe{
+    width: 100%;
+    height: 30px;
+    background-image: linear-gradient(60deg, var(--pallete-01), var(--pallete-02), var(--pallete-03), var(--pallete-04), var(--pallete-05), var(--pallete-06));
+}
+
+#swipe::after{
+    content: 'deslize para fechar >>>';
+    display: block;
+    color: var(--primary-color);
+    width: 100%;
+    height: 30px;
+    font-size: .5rem;
+    line-height: 30px;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .card_0 {
