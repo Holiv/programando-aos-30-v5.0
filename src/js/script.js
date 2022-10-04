@@ -42,7 +42,6 @@ const addShow = (card1, card2, show1, show2) => {
 }
 //add hide function
 const addHide = (card1, card2, hide1, hide2) => {
-    console.log("helton", card1, card2, hide1, hide2);
     card1.classList.add(hide1);
     card2.classList.add(hide2);
 }
@@ -199,7 +198,6 @@ const rotateFunctionRemove = (rotateElementPositive, rotateElementNegative) => {
 const showSideMenu = () => {
     const menuBar01 = document.querySelector(".toggle_01");
     const menuBar02 = document.querySelector(".toggle_02");
-    // console.log(menuBar01, menuBar02)
 
     menuBar01 ? rotateFunctionRemove(toggleBar[0], toggleBar[2]) : rotateFunctionAdd(toggleBar[0], toggleBar[2]);
 }

@@ -189,17 +189,14 @@ html {
 
 main {
     width: 100%;
-    /* width: calc(100% - (2 * var(--grid_width))); */
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    /* border: 1px solid green; */
 }
 
 .section {
     width: 50%;
     height: calc((100vh - 180px) / 2);
-    /* border: 1px solid red; */
 }
 
 .section:nth-child(odd) {
@@ -208,7 +205,6 @@ main {
     justify-content: center;
     padding: 25px;
     width: 60%;
-    /* border: 1px solid red; */
 }
 
 .section:nth-child(even) {
@@ -216,7 +212,6 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid red; */
 }
 
 .section:nth-child(2) img {
@@ -231,14 +226,12 @@ main {
 }
 
 .section:nth-child(3) {
-    /* border: 1px solid red; */
     display: flex;
     justify-content: flex-start;
     padding: 42.5px 25px;
 }
 
 #section_posts {
-    /* border: 1px solid blue; */
     width: 100%;
     height: 200px;
     position: relative;
@@ -431,7 +424,7 @@ main {
     border-image: linear-gradient(0deg, var(--pallete-01), var(--pallete-02), var(--pallete-03), var(--pallete-04), var(--pallete-05), var(--pallete-06)) 1;
     box-shadow: -1px 0 20px var(--pallete-03);
 
-    animation: animated_border 6s infinite linear;
+    animation: animated_border 6s infinite ease;
 }
 
 .card_1 {
