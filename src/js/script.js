@@ -115,7 +115,7 @@ container.addEventListener('touchend', (e) => {
 
     if (deltaX != 0){
         console.log(deltaX);
-        deltaX < -300 ? addShowAll(card_0, card_1, card_2, card_3, showCard0, showCard1, showCard2, showCard3, hideCard0, hideCard1, hideCard2, hideCard3) : addHideAll(card_0, card_1, card_2, card_3, hideCard0, hideCard1, hideCard2, hideCard3, showCard0, showCard1, showCard2, showCard3);
+        deltaX < -150 ? addShowAll(card_0, card_1, card_2, card_3, showCard0, showCard1, showCard2, showCard3, hideCard0, hideCard1, hideCard2, hideCard3) : addHideAll(card_0, card_1, card_2, card_3, hideCard0, hideCard1, hideCard2, hideCard3, showCard0, showCard1, showCard2, showCard3);
     }
 });
 

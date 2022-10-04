@@ -386,6 +386,7 @@ main {
 
 #popup_introduction button {
     display: block;
+    color: var(--primary-color);
     width: 100%;
     height: 40px;
     border-radius: 15px;
