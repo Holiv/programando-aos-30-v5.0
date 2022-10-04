@@ -411,6 +411,10 @@ main {
     height: 100vh;
     padding: 20px;
     color: var(--primary-color);
+    background-color: var(--secondary-color);
+    border: 5px solid;
+    border-image: linear-gradient(to bottom, var(--pallete-01), var(--pallete-02), var(--pallete-03), var(--pallete-04), var(--pallete-05), var(--pallete-06)) 1;
+    box-shadow: -1px 0 20px var(--pallete-03);
 }
 
 .card_0 {
@@ -419,10 +423,10 @@ main {
     z-index: 400;
     background-color: var(--primary-color);
     color: var(--secondary-color);
+    border: none;
     border-left: 5px solid;
     border-image: linear-gradient(to bottom, var(--pallete-01), var(--pallete-02), var(--pallete-03), var(--pallete-04), var(--pallete-05), var(--pallete-06)) 1;
-    box-shadow: -1px 0 20px var(--pallete-03);
-    animation: animated_border 6s infinite linear;
+    box-shadow: -1px 0 20px var(--pallete-03)ç    
 }
 
 .card_1 {
@@ -441,15 +445,6 @@ main {
     width: 380px;
     transform: scaleX(0);
     z-index: 100;
-}
-
-.card_1,
-.card_2,
-.card_3 {
-    background-color: var(--secondary-color);
-    border: 5px solid;
-    border-image: linear-gradient(to bottom, var(--pallete-01), var(--pallete-02), var(--pallete-03), var(--pallete-04), var(--pallete-05), var(--pallete-06)) 1;
-    box-shadow: -1px 0 20px var(--pallete-03);
 }
 
 .show_card_0 {
