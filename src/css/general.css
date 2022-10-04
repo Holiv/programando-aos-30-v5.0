@@ -419,12 +419,42 @@ main {
     z-index: 400;
     background-color: var(--primary-color);
     color: var(--secondary-color);
-
-    border: 5px solid;
-    border-image: linear-gradient(0deg, var(--pallete-01), var(--pallete-02), var(--pallete-03), var(--pallete-04), var(--pallete-05), var(--pallete-06)) 1;
+    border: 1px solid transparent;
+    overflow: hidden;
+    /* border: 5px solid;
+    border-image: linear-gradient(0deg, var(--pallete-01), var(--pallete-02), var(--pallete-03), var(--pallete-04), var(--pallete-05), var(--pallete-06)) 1;*/
     box-shadow: -1px 0 20px var(--pallete-03);
+}
 
-    animation: animated_border 6s infinite ease;
+.card_0::before{
+    content: "";
+    position: absolute;
+    margin-top: 0;
+    right: -250%;
+    top: -17%;
+    height: 150%;
+    width: 600%;
+    background-image: conic-gradient(
+        var(--pallete-01) 60deg, 
+        var(--pallete-02) 120deg,
+        var(--pallete-03) 180deg,
+        var(--pallete-04) 240deg,
+        var(--pallete-05) 300deg,
+        var(--pallete-06) 360deg
+        );
+    animation: animated_border 6s infinite linear;
+    z-index: -1;
+}
+
+.card_0::after{
+    content: "";
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: var(--primary-color);
+    z-index: -1;
 }
 
 .card_1 {
