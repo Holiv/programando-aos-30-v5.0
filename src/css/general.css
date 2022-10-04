@@ -9,15 +9,16 @@
     box-sizing: border-box;
     list-style-type: none;
 }
-a{
+
+a {
     text-decoration: none;
-    color: var(--seconday-color);
+    color: var(--secondary-color);
 }
 
 /* General */
 :root {
     --primary-color: #2e3440;
-    --seconday-color: #d8dee9;
+    --secondary-color: #d8dee9;
     --hover-color: #eceff4;
 
     --pallete-01: #f72585;
@@ -40,7 +41,7 @@ html {
     background-color: var(--primary-color);
     font-family: 'Press Start 2P', cursive;
     font-size: 16px;
-    color: var(--seconday-color);
+    color: var(--secondary-color);
 }
 
 #main_container {
@@ -88,18 +89,24 @@ html {
     padding-left: 20px;
 }
 
-#logo a{
+#logo a {
     display: block;
     height: 80%;
     width: 100%;
 }
 
 #logo img {
+    display: none;
     height: 100%;
     filter: drop-shadow(5px 5px 5px #0000004a);
 }
 
-#logo img:hover{
+#logo a img:nth-child(2) {
+    display: none;
+    height: 80px;
+}
+
+#logo img:hover {
     filter: drop-shadow(3px 3px 3px var(--pallete-03-0));
     animation: hover_menu 1s ease;
 }
@@ -122,7 +129,7 @@ html {
     gap: 10px;
 }
 
-#toggle_menu{
+#toggle_menu {
     position: relative;
     height: 80%;
     width: 40px;
@@ -132,14 +139,14 @@ html {
     cursor: pointer;
 }
 
-#toggle_menu span{
+#toggle_menu span {
     display: block;
     width: 100%;
     height: 5px;
-    background-color: var(--seconday-color);
+    background-color: var(--secondary-color);
 }
 
-#toggle_menu span:nth-child(2){
+#toggle_menu span:nth-child(2) {
     background-color: var(--pallete-01);
 }
 
@@ -154,10 +161,11 @@ html {
     /* border: 1px solid red; */
 }
 
-#itens_section ul li a{
+#itens_section ul li a {
     display: block;
 }
-#itens_section ul li a:hover{
+
+#itens_section ul li a:hover {
     filter: drop-shadow(4px 4px 4px var(--pallete-03));
     animation: hover_menu 1s ease;
 }
@@ -172,7 +180,7 @@ html {
     animation: show_up 1.5s ease;
 }
 
-#branch img{
+#branch img {
     max-width: 80.66%;
     max-height: 1302px;
     width: auto;
@@ -350,7 +358,7 @@ main {
     width: 60%;
     height: 600px;
     padding: 20px;
-    background-color: var(--seconday-color);
+    background-color: var(--secondary-color);
     color: var(--primary-color);
     box-shadow: 6px 6px 20px var(--pallete-01-0),
         8px 8px 20px var(--pallete-04-0),
@@ -370,7 +378,8 @@ main {
     text-align: center;
     font-size: 1em;
 }
-#popup_introduction span{
+
+#popup_introduction span {
     line-height: 2em;
     text-transform: uppercase;
     background-image: linear-gradient(90deg, var(--pallete-01), var(--pallete-02), var(--pallete-03), var(--pallete-04), var(--pallete-05), var(--pallete-06));
@@ -394,99 +403,110 @@ main {
     box-shadow: 2px 2px 2px var(--pallete-03);
     z-index: 3;
     cursor: pointer;
-} 
+}
 
-.click_button{
+.click_button {
     transform: translate(2px, 2px);
     box-shadow: 0px 0px 0px transparent;
 }
 
-.fadeaway{
+.fadeaway {
     animation: fadeaway 1s ease;
 }
 
-/* #side_container{
-    display: none;
-    height: 100vh;
-    position: absolute;
-    right: 100%;
-    border: 1px solid red;
-} */
-
-.card_0{
-    width: 240px;
-    transform: scaleX(0);
-    z-index: 400;
-    background-color: red;
-}
-
-.card_1{
-    width: 300px;
-    transform: scaleX(0);
-    z-index: 300;
-    background-color: blue;
-}
-
-.card_2{
-    width: 360px;
-    transform: scaleX(0);
-    z-index: 200;
-    background-color: gray;
-}
-
-.card_3{
-    width: 420px;
-    transform: scaleX(0);
-    z-index: 100;
-    background-color: pink;
-}
-
-.show_card_0{
-    transform: scaleX(1);
-    transform-origin: right;
-    transition: transform 1s;
-}
-.show_card_1{
-    transform: scaleX(1);
-    transform-origin: right;
-    transition: transform 1.25s;
-}
-.show_card_2{
-    transform: scaleX(1);
-    transform-origin: right;
-    transition: transform 1.5s;
-}
-.show_card_3{
-    transform: scaleX(1);
-    transform-origin: right;
-    transition: transform 1.75s;
-}
-
-.hide_card_0{
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 1s;
-}
-.hide_card_1{
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 1.25s;
-}
-.hide_card_2{
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 1.5s;
-}
-.hide_card_3{
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 1.75s;
-}
-
-
-.card_menu{
-    /* background-color: var(--seconday-color); */
+.card_menu {
     position: absolute;
     right: 0;
     height: 100vh;
+    padding: 20px;
+    color: var(--primary-color);
+}
+
+.card_0 {
+    width: 260px;
+    transform: scaleX(0);
+    z-index: 400;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+
+    border: 5px solid;
+    border-image: linear-gradient(0deg, var(--pallete-01), var(--pallete-02), var(--pallete-03), var(--pallete-04), var(--pallete-05), var(--pallete-06)) 1;
+    box-shadow: -1px 0 20px var(--pallete-03);
+
+    animation: animated_border 6s infinite linear;
+}
+
+.card_1 {
+    width: 300px;
+    transform: scaleX(0);
+    z-index: 300;
+}
+
+.card_2 {
+    width: 340px;
+    transform: scaleX(0);
+    z-index: 200;
+}
+
+.card_3 {
+    width: 380px;
+    transform: scaleX(0);
+    z-index: 100;
+}
+
+.card_1,
+.card_2,
+.card_3 {
+    background-color: var(--secondary-color);
+    border: 5px solid;
+    border-image: linear-gradient(to bottom, var(--pallete-01), var(--pallete-02), var(--pallete-03), var(--pallete-04), var(--pallete-05), var(--pallete-06)) 1;
+    box-shadow: -1px 0 20px var(--pallete-03);
+}
+
+.show_card_0 {
+    transform: scaleX(1);
+    transform-origin: right;
+    transition: transform 1s;
+}
+
+.show_card_1 {
+    transform: scaleX(1);
+    transform-origin: right;
+    transition: transform 1.25s;
+}
+
+.show_card_2 {
+    transform: scaleX(1);
+    transform-origin: right;
+    transition: transform 1.5s;
+}
+
+.show_card_3 {
+    transform: scaleX(1);
+    transform-origin: right;
+    transition: transform 1.75s;
+}
+
+.hide_card_0 {
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 1s;
+}
+
+.hide_card_1 {
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 1.25s;
+}
+
+.hide_card_2 {
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 1.5s;
+}
+
+.hide_card_3 {
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 1.75s;
 }

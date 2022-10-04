@@ -9,6 +9,15 @@
         width: calc(100% - 10px);
         height: auto;
     }
+    #logo {
+        height: 100%;
+    }
+    #logo a img:first-child{
+        display: none;
+    }
+    #logo a img:nth-child(2){
+        display: block;
+    }
     #navbar{
         margin-bottom: 20px;
     }

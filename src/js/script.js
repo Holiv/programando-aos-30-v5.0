@@ -23,54 +23,7 @@ const showCard1 = "show_card_1"
 const showCard2 = "show_card_2"
 const showCard3 = "show_card_3"
 
-console.log(hideCard0)
-
-// const cardContent = () => {
-//     const cardI = document.querySelectorAll(".card_content");
-//     return cardI;
-// }
-// const cardItems = cardContent();
-// console.log(cardItems);
-// const cardContentItem0 = cardItems.item(0);
-// const cardContentItem1 = cardItems.item(1);
-// const cardContentItem2 = cardItems.item(2);
-// const cardContentItem3 = cardItems.item(3);
-
-// const testeH_1 = () => {
-//     setTimeout(() => {
-//     card[0].classList.remove("show_card_0");
-//     card[1].classList.remove("show_card_1");
-//     card[2].classList.remove("show_card_2");
-//     card[3].classList.remove("show_card_3");
-//     }, 1750)
-// }
-
-// setTimeout(() => {
-//     testeH()
-// }, 1750);
-
-// const testeH = () => {
-//     setTimeout(() => {
-//         console.log("helton")
-//         card[0].classList.add("hide_card_0");
-//         card[1].classList.add("hide_card_1");
-//         card[2].classList.add("hide_card_2");
-//         card[3].classList.add("hide_card_3");
-
-//         testeH_1();
-//     }, 1750);
-// }
-
-// const testeS = () => {
-//     card[0].classList.add("show_card_0");
-//     card[1].classList.add("show_card_1");
-//     card[2].classList.add("show_card_2");
-//     card[3].classList.add("show_card_3");
-
-//     // testeH();
-// };
-
-// testeS();
+//add showAll function - show all cards
 const addShowAll = (card1, card2, card3, card4, show1, show2, show3, show4) => {
     card1.classList.add(show1);
     card2.classList.add(show2);
@@ -95,10 +48,6 @@ const addHide = (card1, card2, hide1, hide2) => {
 }
 
 const substitution = (card1, card2, changeSet, hideCard_1, hideCard_2, showCard_1, showCard_2) => {
-
-
-    // addHide(card1, card2, hideCard_1, hideCard_2);
-    // console.log(card1, card2, hideCard_1, hideCard_2);
 
     setTimeout(() => {
         const cardContent = document.querySelectorAll(".card_content");
@@ -127,9 +76,6 @@ const substitution = (card1, card2, changeSet, hideCard_1, hideCard_2, showCard_
     removeHide(card1, card2, hideCard_1, hideCard_2);
     addShow(card1, card2, showCard_1, showCard_2);
     }, 1500);
-
-    
-    
 }
 
 const menuMove = (card1, card2, changeSet, hideCard1_p, hideCard2_p, showCard1_p, showCard2_p) => {
@@ -138,11 +84,6 @@ const menuMove = (card1, card2, changeSet, hideCard1_p, hideCard2_p, showCard1_p
     //calling the substitution function then adding and removing classes Hide and Show
     substitution(card1, card2, changeSet, hideCard1_p, hideCard2_p, showCard1_p, showCard2_p);
 }
-
-// toggleMenu.addEventListener("click", function () { addShowAll(card_0, card_1, card_2, card_3, showCard0, showCard1, showCard2, showCard3) });
-// card_1.addEventListener("click", function () { menuMove(card_0, card_1, 1, hideCard0, hideCard1, showCard0, showCard1) });
-// card_2.addEventListener("click", function () { menuMove(card_0, card_2, 2, hideCard0, hideCard2, showCard0, showCard2) });
-// card_3.addEventListener("click", function () { menuMove(card_0, card_3, 3, hideCard0, hideCard3, showCard0, showCard3) });
 
 toggleMenu.addEventListener("touchstart", function () { addShowAll(card_0, card_1, card_2, card_3, showCard0, showCard1, showCard2, showCard3) });
 card_1.addEventListener("touchstart", function () { menuMove(card_0, card_1, 1, hideCard0, hideCard1, showCard0, showCard1) });
