@@ -90,13 +90,11 @@ html {
 }
 
 #logo a {
-    display: block;
     height: 80%;
     width: 100%;
 }
 
 #logo img {
-    display: none;
     height: 100%;
     filter: drop-shadow(5px 5px 5px #0000004a);
 }
