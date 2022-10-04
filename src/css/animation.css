@@ -153,7 +153,10 @@
 }
 
 @keyframes animated_border {
+    50%{
+        border-image: linear-gradient(to top, var(--pallete-01), var(--pallete-02), var(--pallete-03), var(--pallete-04), var(--pallete-05), var(--pallete-06)) 1;
+    }
     100%{
-        transform: rotate(360deg);
+        border-image: linear-gradient(to bottom, var(--pallete-01), var(--pallete-02), var(--pallete-03), var(--pallete-04), var(--pallete-05), var(--pallete-06)) 1;
     }
 }
