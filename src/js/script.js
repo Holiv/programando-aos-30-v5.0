@@ -24,11 +24,25 @@ const showCard2 = "show_card_2"
 const showCard3 = "show_card_3"
 
 //add showAll function - show all cards
-const addShowAll = (card1, card2, card3, card4, show1, show2, show3, show4) => {
+const addShowAll = (card1, card2, card3, card4, show1, show2, show3, show4, hide1, hide2, hide3, hide4) => {
     card1.classList.add(show1);
+    card1.classList.remove(hide1);
     card2.classList.add(show2);
+    card2.classList.remove(hide2);
     card3.classList.add(show3);
+    card3.classList.remove(hide3);
     card4.classList.add(show4);
+    card4.classList.remove(hide4);
+}
+const addHideAll = (card1, card2, card3, card4, hide1, hide2, hide3, hide4, show1, show2, show3, show4) => {
+    card1.classList.add(hide1);
+    card1.classList.remove(show1);
+    card2.classList.add(hide2);
+    card2.classList.remove(show2);
+    card3.classList.add(hide3);
+    card3.classList.remove(show3);
+    card4.classList.add(hide4);
+    card4.classList.remove(show4);
 }
 //remove hide function
 const removeHide = (card1, card2, hide1, hide2) => {
@@ -84,11 +98,28 @@ const menuMove = (card1, card2, changeSet, hideCard1_p, hideCard2_p, showCard1_p
     substitution(card1, card2, changeSet, hideCard1_p, hideCard2_p, showCard1_p, showCard2_p);
 }
 
-toggleMenu.addEventListener("touchstart", function () { addShowAll(card_0, card_1, card_2, card_3, showCard0, showCard1, showCard2, showCard3) });
+toggleMenu.addEventListener("touchstart", function () { addShowAll(card_0, card_1, card_2, card_3, showCard0, showCard1, showCard2, showCard3, hideCard0, hideCard1, hideCard2, hideCard3) });
 card_1.addEventListener("touchstart", function () { menuMove(card_0, card_1, 1, hideCard0, hideCard1, showCard0, showCard1) });
 card_2.addEventListener("touchstart", function () { menuMove(card_0, card_2, 2, hideCard0, hideCard2, showCard0, showCard2) });
 card_3.addEventListener("touchstart", function () { menuMove(card_0, card_3, 3, hideCard0, hideCard3, showCard0, showCard3) });
 
+//open e close menu by touch
+const container = document.querySelector('#inner_container');
+let clientX;
+let deltaX;
+container.addEventListener('touchstart', (e) => {
+    clientX = e.touches[0].clientX;
+}, false);
+container.addEventListener('touchend', (e) => {
+    deltaX = e.changedTouches[0].clientX - clientX;
+
+    if (deltaX != 0){
+        deltaX < 0 && !0 ? addShowAll(card_0, card_1, card_2, card_3, showCard0, showCard1, showCard2, showCard3, hideCard0, hideCard1, hideCard2, hideCard3) : addHideAll(card_0, card_1, card_2, card_3, hideCard0, hideCard1, hideCard2, hideCard3, showCard0, showCard1, showCard2, showCard3);
+    }
+});
+
+
+// 
 
 //Carrouseel
 const articlesCarrousel = () => {
