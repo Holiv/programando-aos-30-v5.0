@@ -379,9 +379,22 @@ main {
     color: transparent;
 }
 
-#popup_introduction iframe {
+#popup_introduction a {
+    position: relative;
+    overflow: hidden;
+    display: block;
     width: 100%;
     height: 80%;
+    margin: 5px;
+}
+
+#popup_introduction img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    height: auto;
 }
 
 #popup_introduction button {
