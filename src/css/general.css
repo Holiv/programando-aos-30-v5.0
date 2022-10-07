@@ -171,11 +171,29 @@ html {
 #branch {
     max-width: 968px;
     position: absolute;
-    top: 750px;
+    /* top: 750px; */
     left: 66px;
     display: none;
     opacity: 1;
     animation: show_up 1.5s ease;
+}
+
+.commit{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: inset 0px 0px 25px var(--pallete-02);
+    cursor: pointer;
+}
+.computer_science_1{
+    top: 0;
+    left: 66px;
+}
+.javascript_1{
+    top: 0;
+    left: 771px;
 }
 
 #branch img {

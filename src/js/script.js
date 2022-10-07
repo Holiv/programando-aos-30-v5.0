@@ -1,4 +1,5 @@
 const totalHeight = document.querySelector("html").offsetHeight;
+let totalWidth;
 const articles = document.querySelectorAll('.articles');
 const popupBg = document.querySelector('#popup_bg');
 const branchImg = document.querySelector('#branch');
@@ -6,6 +7,53 @@ const toggleMenu = document.querySelector('#toggle_menu');
 const toggleBar = document.querySelectorAll('.toggle_bar');
 const styleDisplayNone = `style.display = "none"`;
 const styleDisplayBlock = `style.display = "block"`;
+
+//setting the main config of branch img
+let branchWidth;
+const commitSideFactor = 0.1024;
+//commit elements - clickable elements
+const commit1ComputerScience = document.querySelector(".computer_science_1");
+const commit1ComputerScienceFactorTop = 0.914;
+const commit1ComputerScienceFactorLeft = 0.0;
+let commit1ComputerScienceElement;
+
+const commit1Javascript = document.querySelector(".javascript_1");
+const commit1JavaScriptFactorTop = 1.0175;
+const commit1JavascriptFactorLeft = 0.8966;
+let commit1JavaScriptElement;
+
+//setting the position of the commit element
+const commitPosition = (commit, branch_width, commitFactorTop, commitFactorLeft) => {
+    //seting the top position of the element on the screen
+    let commitTopPositionPx = branch_width * commitFactorTop;
+    commit.style.top = `${(totalHeight - 50) + commitTopPositionPx}px`;
+
+    let commitLeftPositionPx = branch_width * commitFactorLeft;
+    totalWidth > 480 ? commit.style.left = `${commitLeftPositionPx + 66}px` : commit.style.left = `${commitLeftPositionPx + 5}px`;
+}
+//setting the size of the commit element
+const commitSize = (commit, branch_width) => {
+    //setting the size of the commit elements on the screen
+    commit.style.width = `${branch_width * commitSideFactor}px`;
+    commit.style.height = `${branch_width * commitSideFactor}px`;
+}
+//main function to set the clickable elements on the branch img
+const branchFunction = () => {
+    setInterval(() => {
+        branchWidth = document.querySelector('#branch_img').width;
+        totalWidth = document.querySelector("html").offsetWidth;
+
+        commitPosition(commit1ComputerScience, branchWidth, commit1ComputerScienceFactorTop, commit1ComputerScienceFactorLeft);
+        commitSize(commit1ComputerScience, branchWidth);
+
+        commitPosition(commit1Javascript, branchWidth, commit1JavaScriptFactorTop, commit1JavascriptFactorLeft);
+        commitSize(commit1Javascript, branchWidth);
+
+    }, 1000)
+}
+window.onload = branchFunction();
+
+
 
 const card = document.querySelectorAll(".card_menu");
 const card_0 = card[0];
@@ -86,8 +134,8 @@ const substitution = (card1, card2, changeSet, hideCard_1, hideCard_2, showCard_
             default:
                 alert('valor inválido');
         }
-    removeHide(card1, card2, hideCard_1, hideCard_2);
-    addShow(card1, card2, showCard_1, showCard_2);
+        removeHide(card1, card2, hideCard_1, hideCard_2);
+        addShow(card1, card2, showCard_1, showCard_2);
     }, 1500);
 }
 
@@ -113,7 +161,7 @@ container.addEventListener('touchstart', (e) => {
 container.addEventListener('touchend', (e) => {
     deltaX = e.changedTouches[0].clientX - clientX;
 
-    if (deltaX != 0){
+    if (deltaX != 0) {
         console.log(deltaX);
         deltaX < -150 ? addShowAll(card_0, card_1, card_2, card_3, showCard0, showCard1, showCard2, showCard3, hideCard0, hideCard1, hideCard2, hideCard3) : addHideAll(card_0, card_1, card_2, card_3, hideCard0, hideCard1, hideCard2, hideCard3, showCard0, showCard1, showCard2, showCard3);
     }
@@ -201,6 +249,7 @@ close_button.addEventListener('click', function () {
         displayNone(popup_bg);
 
         displayBlock(branchImg);
+        branchImg.style.top = `${totalHeight - 50}px`
     }, 1000);
 });
 

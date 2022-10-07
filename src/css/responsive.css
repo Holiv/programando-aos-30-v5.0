@@ -1,3 +1,6 @@
+:root{
+    --padding-branch: 51px;
+}
 @media screen and (max-width:480px) {
     #main_container {
         margin: 0 auto;
@@ -42,6 +45,12 @@
         left: 50%;
         top: 700px;
     }
+    /* .computer_science_1{
+        left: calc(61px - 56px);
+    }
+    .javascript_1{
+        left: calc(771px - 51px);
+    } */
     #popup_introduction{
         width: 94%;
         height: 50%;
