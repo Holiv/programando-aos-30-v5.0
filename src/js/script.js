@@ -7,6 +7,8 @@ const toggleMenu = document.querySelector("#toggle_menu");
 const toggleBar = document.querySelectorAll(".toggle_bar");
 const styleDisplayNone = `style.display = "none"`;
 const styleDisplayBlock = `style.display = "block"`;
+import { Branch } from "../modules/BranchClass.js";
+import { Commit } from "../modules/CommitClass.js";
 
 //setting the main config of branch img
 let branchWidth;
@@ -15,14 +17,29 @@ const commitSideFactor = 0.1024;
 const commit1ComputerScience = document.querySelector(".computer_science_1");
 const commit1ComputerScienceFactorTop = 0.914;
 const commit1ComputerScienceFactorLeft = 0.0;
-let commit1ComputerScienceElement;
+/* let commit1ComputerScienceElement; */
+const commit1ComputerScienceElement = new Commit(
+  commitSideFactor,
+  commit1ComputerScienceFactorTop,
+  commit1ComputerScienceFactorLeft,
+  ".computer_science_1"
+);
 
 const commit1Javascript = document.querySelector(".javascript_1");
 const commit1JavaScriptFactorTop = 1.0175;
 const commit1JavascriptFactorLeft = 0.8966;
-let commit1JavaScriptElement;
+/* let commit1JavaScriptElement; */
+const commit1JavaScriptElement = new Commit(
+  commitSideFactor,
+  commit1JavaScriptFactorTop,
+  commit1JavascriptFactorLeft,
+  ".javascript_1"
+);
 
-//setting the position of the commit element
+const branch = new Branch();
+branch.putCommit(commit1ComputerScienceElement, commit1JavaScriptElement);
+
+/* //setting the position of the commit element
 const commitPosition = (
   commit,
   branch_width,
@@ -66,8 +83,10 @@ const branchFunction = () => {
     );
     commitSize(commit1Javascript, branchWidth);
   }, 1000);
-};
-window.onload = branchFunction();
+}; */
+/* window.onload = branchFunction(); */
+
+window.onload = branch.renderCommits();
 
 const card = document.querySelectorAll(".card_menu");
 const card_0 = card[0];
