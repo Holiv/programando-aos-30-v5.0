@@ -1,5 +1,6 @@
 const totalHeight = document.querySelector("html").offsetHeight;
 let totalWidth;
+let commit_size;
 const articles = document.querySelectorAll('.articles');
 const popupBg = document.querySelector('#popup_bg');
 const branchImg = document.querySelector('#branch');
@@ -11,16 +12,23 @@ const styleDisplayBlock = `style.display = "block"`;
 //setting the main config of branch img
 let branchWidth;
 const commitSideFactor = 0.1024;
-//commit elements - clickable elements
+const buttonOpenCommitPopup = document.querySelectorAll('.commit');
+const commitPopupElement = document.querySelectorAll('.commit_popup');
+
+//commit and popup elements - clickable elements
 const commit1ComputerScience = document.querySelector(".computer_science_1");
+const buttonOpenCommitPopup_1 = buttonOpenCommitPopup[0];
+const commit1ComputerSciencePopup_1 = commitPopupElement[0];
 const commit1ComputerScienceFactorTop = 0.914;
 const commit1ComputerScienceFactorLeft = 0.0;
-let commit1ComputerScienceElement;
+// let commit1ComputerScienceElement;
 
 const commit1Javascript = document.querySelector(".javascript_1");
+const buttonOpenCommitPopup_2 = buttonOpenCommitPopup[1];
+const commit1JavascriptPopup_1 = commitPopupElement[1];
 const commit1JavaScriptFactorTop = 1.0175;
 const commit1JavascriptFactorLeft = 0.8966;
-let commit1JavaScriptElement;
+// let commit1JavaScriptElement;
 
 //setting the position of the commit element
 const commitPosition = (commit, branch_width, commitFactorTop, commitFactorLeft) => {
@@ -31,12 +39,54 @@ const commitPosition = (commit, branch_width, commitFactorTop, commitFactorLeft)
     let commitLeftPositionPx = branch_width * commitFactorLeft;
     totalWidth > 480 ? commit.style.left = `${commitLeftPositionPx + 66}px` : commit.style.left = `${commitLeftPositionPx + 5}px`;
 }
+//setting the position of the commit popup element
+const commitPopupElementPosition = (commitElement, branch_width, commitFactorTop, commitFactorLeft) => {
+    //seting the top position of the popup element when full opened (subtracting 200px - equal to the element height)
+    let commitPopupElementTopPositionPx = branch_width * commitFactorTop;
+    commitElement.style.top = `${(totalHeight - 50) + (commitPopupElementTopPositionPx - 200 + commit_size / 2)}px`;
+
+    let commitPopupElementLeftPositionPx = branch_width * commitFactorLeft;
+    if (commitElement.classList.contains("commit_popup_left"))
+    {
+        totalWidth > 480 ? commitElement.style.left = `${commitPopupElementLeftPositionPx + 66 + (commit_size / 2)}px` : commitElement.style.left = `${(totalWidth / 2) - (commitElement.offsetWidth/2) - 5}px`;
+    } else
+    {
+        totalWidth > 480 ? commitElement.style.left = `${(commitPopupElementLeftPositionPx + 66 + (commit_size / 2)) - commitElement.offsetWidth}px` : commitElement.style.left = `${(totalWidth / 2) - (commitElement.offsetWidth/2) - 5}px`;
+    }
+   
+
+}
 //setting the size of the commit element
 const commitSize = (commit, branch_width) => {
     //setting the size of the commit elements on the screen
-    commit.style.width = `${branch_width * commitSideFactor}px`;
-    commit.style.height = `${branch_width * commitSideFactor}px`;
+    commit_size = branch_width * commitSideFactor;
+
+    commit.style.width = `${commit_size}px`;
+    commit.style.height = `${commit_size}px`;
 }
+
+//show popup function
+const showPopupFunction = (commitPopupElementToShow) => {
+    if (commitPopupElementToShow.classList.contains("hide_commit_popup"))
+    {
+        commitPopupElementToShow.classList.remove("hide_commit_popup");
+        commitPopupElementToShow.classList.add("show_commit_popup");
+    } else
+    {
+        commitPopupElementToShow.classList.add("show_commit_popup");
+    }
+}
+const hidePopupFunction = () => {
+    for (let i = 0; i < commitPopupElement.length; i++)
+    {
+        if(commitPopupElement[i].classList.contains("show_commit_popup"))
+        {
+            commitPopupElement[i].classList.add("hide_commit_popup");
+            commitPopupElement[i].classList.remove("show_commit_popup");
+        }
+    }
+}
+
 //main function to set the clickable elements on the branch img
 const branchFunction = () => {
     setInterval(() => {
@@ -45,15 +95,21 @@ const branchFunction = () => {
 
         commitPosition(commit1ComputerScience, branchWidth, commit1ComputerScienceFactorTop, commit1ComputerScienceFactorLeft);
         commitSize(commit1ComputerScience, branchWidth);
+        commitPopupElementPosition(commit1ComputerSciencePopup_1, branchWidth, commit1ComputerScienceFactorTop, commit1ComputerScienceFactorLeft);
 
         commitPosition(commit1Javascript, branchWidth, commit1JavaScriptFactorTop, commit1JavascriptFactorLeft);
         commitSize(commit1Javascript, branchWidth);
+        commitPopupElementPosition(commit1JavascriptPopup_1, branchWidth, commit1JavaScriptFactorTop, commit1JavascriptFactorLeft)
 
-    }, 1000)
+    }, 250)
 }
 window.onload = branchFunction();
 
-
+//event listeners
+document.addEventListener('keydown', e => { if(e.key = "Escape") {hidePopupFunction()} });
+buttonOpenCommitPopup_1.addEventListener('click', () => {showPopupFunction(commit1ComputerSciencePopup_1)});
+buttonOpenCommitPopup_2.addEventListener('click', () => {showPopupFunction(commit1JavascriptPopup_1)});
+// function(){showPopupFunction(commit1ComputerSciencePopup_1)}
 
 const card = document.querySelectorAll(".card_menu");
 const card_0 = card[0];
@@ -284,3 +340,23 @@ const showSideMenu = () => {
 }
 
 toggleMenu.addEventListener("click", showSideMenu);
+
+// const contact = document.querySelector('.contato');
+// const test = document.querySelector('.teste');
+// contact.addEventListener('click', () => {
+//     let horizontal_elements = totalWidth / 10;
+//     console.log('helton')
+    
+//     for (let i = 0; i < 15; i++)
+//     {
+//         for (let j = 0; j < horizontal_elements; j++)
+//         {
+//             const newDiv = document.createElement("div");
+//             newDiv.classList.add("div_teste")
+//             test.appendChild(newDiv);
+//         }
+//     }
+
+
+
+// })

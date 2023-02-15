@@ -45,12 +45,7 @@
         left: 50%;
         top: 700px;
     }
-    /* .computer_science_1{
-        left: calc(61px - 56px);
-    }
-    .javascript_1{
-        left: calc(771px - 51px);
-    } */
+
     #popup_introduction{
         width: 94%;
         height: 50%;
@@ -77,5 +72,8 @@
     }
     #side_container{
         display: block;
+    }
+    .commit_popup{
+        width: 100%;
     }
 }

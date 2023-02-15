@@ -73,7 +73,22 @@ html {
     display: flex;
     flex-direction: column;
 }
+/* .teste{
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    height: 150px;
+    border: 1px solid red;
 
+}
+.div_teste{
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+} */
 #navbar {
     width: 100%;
     height: 80px;
@@ -187,6 +202,30 @@ html {
     box-shadow: inset 0px 0px 25px var(--pallete-02);
     cursor: pointer;
 }
+
+.commit_popup{
+    background-color: var(--pallete-06);
+    position: absolute;
+    width: 400px;
+    height: 200px;
+}
+.commit_popup_left{
+    transform: scale(0, 0);
+    transform-origin: bottom left;
+}
+.commit_popup_right{
+    transform: scale(0, 0);
+    transform-origin: bottom right;
+}
+.show_commit_popup{
+    transform: scale(1, 1);
+    transition: transform 1s;
+}
+.hide_commit_popup{
+    transform: scale(0, 0);
+    transition: transform 1s;
+}
+
 .computer_science_1{
     top: 0;
     left: 66px;
@@ -260,8 +299,24 @@ main {
     width: 100%;
     height: 100%;
     position: absolute;
+    overflow: hidden;
 }
-
+.articles a{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.articles h3{
+    font-size: 1em;
+}
+.articles img{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 .articles:nth-child(1) {
     background-color: var(--pallete-01);
     width: 0%;
@@ -304,10 +359,10 @@ main {
 }
 
 .section h3 {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     text-align: justify;
     line-height: 1.4rem;
-    letter-spacing: 0.12rem;
+    letter-spacing: 0.2rem;
     filter: drop-shadow(5px 5px 5px #00000085);
     animation: shadow 1s ease;
 }
